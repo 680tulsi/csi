@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Page Layout with Tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex flex-col">
+  
+  <header class="bg-blue-600 text-white p-4 relative">
+    <div class="flex justify-between items-center container mx-auto">
+      <h1 class="text-xl font-bold">My Responsive Website</h1>
+      <nav class="hidden md:flex space-x-4" id="nav-menu">
+        <a href="#" class="hover:underline">Home</a>
+        <a href="#" class="hover:underline">About</a>
+        <a href="#" class="hover:underline">Services</a>
+        <a href="#" class="hover:underline">Contact</a>
+      </nav>
+      <button class="md:hidden" id="menu-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+    <div class="md:hidden container mx-auto" id="mobile-menu" style="display: none;">
+      <nav class="flex flex-col space-y-2 mt-2">
+        <a href="#" class="hover:underline">Home</a>
+        <a href="#" class="hover:underline">About</a>
+        <a href="#" class="hover:underline">Services</a>
+        <a href="#" class="hover:underline">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container mx-auto flex-1 grid grid-cols-1 md:grid-cols-4 gap-4 p-4">
+    <main class="md:col-span-3 bg-gray-100 p-4">
+      <h2 class="text-2xl font-semibold mb-4">Main Content Area</h2>
+      <p class="mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae facilisis libero. Fusce nec ligula sit amet odio porta elementum. Quisque commodo, ex id lacinia posuere, urna turpis fringilla libero, vitae aliquam elit libero vel elit.</p>
+      <p>More sample content to visualize layout responsiveness and spacing using Tailwind utilities.</p>
+    </main>
+
+    <aside class="bg-gray-200 p-4">
+      <h3 class="text-xl font-medium mb-2">Sidebar</h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li>Sidebar Item 1</li>
+        <li>Sidebar Item 2</li>
+        <li>Sidebar Item 3</li>
+        <li>Sidebar Item 4</li>
+      </ul>
+    </aside>
+  </div>
+
+
+  <footer class="bg-blue-600 text-white text-center p-4">
+    &copy; 2025 My Responsive Website. All rights reserved.
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
+    });
+  </script>
+</body>
+</html>
